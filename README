@@ -1,0 +1,10 @@
+2.5 Flixel version of Flash Game Dev Tip #8 by PhotonStorm
+Original tutorial:
+http://www.photonstorm.com/archives/1191/flash-game-dev-tip-8-building-a-shoot-em-up-part-3-return-fire
+
+You need to manually add flixel and power tools to source.
+Flixel (dev branch used):
+https://github.com/AdamAtomic/flixel
+
+Flixel Powertools :
+https://github.com/photonstorm/Flixel-Power-Tools

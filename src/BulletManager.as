@@ -23,7 +23,7 @@ package
 			if (getFirstAvailable())
 			{
 				Bullet(getFirstAvailable()).fire(bx, by);
-				trace("fire!!");
+				//trace("fire!!");
 			}
 			
 		}

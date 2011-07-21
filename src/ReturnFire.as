@@ -16,7 +16,7 @@ package
 		
 		public function ReturnFire() 
 		{
-			super(320, 240, MenuState, 2);
+			super(320, 240, MenuState, 2,60,60);
 			forceDebugger = true;
 		}
 		
