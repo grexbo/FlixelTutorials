@@ -17,12 +17,13 @@
       <value>'21/07/2011'</value>
     </define>
     <source-path append="true">
-      <path-element>C:\Documents and Settings\gorke\My Documents\myFlashProjects\Shootemup\src</path-element>
+      <path-element>C:\Documents and Settings\gorke\Desktop\Tip8-ReturnFire\src</path-element>
+      <path-element>C:\Program Files\FlashDevelop\Projects\115 ActionScript 3 - Flixel 2.5 Project\src</path-element>
       <path-element>C:\Program Files\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
   </compiler>
   <file-specs>
-    <path-element>C:\Documents and Settings\gorke\My Documents\myFlashProjects\Shootemup\src\ReturnFire.as</path-element>
+    <path-element>C:\Documents and Settings\gorke\Desktop\Tip8-ReturnFire\src\ReturnFire.as</path-element>
   </file-specs>
   <default-background-color>#000000</default-background-color>
   <default-frame-rate>60</default-frame-rate>

@@ -21,9 +21,6 @@ package
 		public function ScrollingBackground() 
 		{
 			
-			//camera = new FlxCamera(0,0,200,320,2);
-			
-			
 			//stars as flixel 2.5 plugin !
 			//starfield
 			if (FlxG.getPlugin(FlxSpecialFX) == null)
@@ -34,17 +31,14 @@ package
 			starfield = FlxSpecialFX.starfield();
 			starfield.setStarSpeed(0, 0.5);
 
-			stars = starfield.create(0, 0, 320, 240, 256, 1, 10);
+			stars = starfield.create(0, 0, FlxG.width, FlxG.height, 256, 1, 10);
 			stars.scrollFactor.x = 0;
 			stars.scrollFactor.y = 0;
-			//stars.angle = -90;
+			//stars.angle = -90; //no need to rotate using speed above
 		
 			super();
 			
-			
-			//	The starfield behind the map
-			//stars = new FlxStarField(0, 0, FlxG.width, FlxG.height, 200, 1);
-			//stars.setStarSpeed(0, 0.5);
+
 			
 			//	Our scrolling background map, created using DAME
 			map = new FlxTilemap();
@@ -80,7 +74,7 @@ package
 		{
 			super.update();
 			
-			dolly.velocity.y = -10;
+			dolly.velocity.y = -100;
 			
 			//	Have we scrolled off the top of our map?
 			if (dolly.y < -480)
@@ -101,6 +95,7 @@ package
 		override public function kill():void
 		{	
 			FlxSpecialFX.clear();
+			//need to stop camera else will trap when changing state!
 			FlxG.camera.stopFX();
 			}
 		

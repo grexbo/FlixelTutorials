@@ -7,11 +7,12 @@ package
 		private var pixels:FlxGroup;
 		private var jet:FlxEmitter;
 		
+		[Embed(source = '../assets/jets.png')] private var jetsPNG:Class;
+
 		public function Fx() 
 		{
 			super();
 			
-			this.cameras 
 			pixels = new FlxGroup(20);
 			
 			//	Here we create an FlxGroup containing 40 FlxEmitters, all the same, used when the aliens are shot/explode
@@ -25,39 +26,23 @@ package
 				tempPixel.setYSpeed( -30, -60);
 				tempPixel.setRotation(0, 0);	// VITAL!!!);
 				//tempPixel.exists = false;
-				//tempPixel.setMotion(0, 5, 0.2, 360, 200, 1.8);
 				tempPixel.makeParticles(Pixel, 10, 10, true, 1);
-				//tempPixel.exists = false;
 				tempPixel.maxSize = 10;
-				//tempPixel.alive = false;
-				//tempPixel.lifespan = 0;
-				//tempPixel.maxSize = 10;
-
-			/*	
-				var tempPixel = new FlxParticle();
-					//particle.makeGraphic(1, 1, 0xFF597137);
-					tempPixel.makeGraphic(8, 8, 0xFFf2440e); //(Pixel);
-					tempPixel.setXSpeed( -50, 50);
-					tempPixel.setYSpeed( -30, -60);
-					tempPixel.setRotation(0, 0);
-					tempPixel.gravity = 200;
-				*/	
-				
+		
 				pixels.add(tempPixel);
-				//emitter = new FlxEmitter(0, 0, 0, 0, null, -1.5, -100, 100, -100, 100, 0, 0, 200, 100, ParticleImage, 100, true, particleLayer);
-			
-
 			}
 			
 			//	Jet thrusters for trailing behind the ship
-			jet = new FlxEmitter();
-			jet.setSize(8, 8);
-			//jet.angularVelocity = 0;
-			jet.gravity = 300;
-			jet.setXSpeed(-30, 30);
+			//max 40 particles
+			jet = new FlxEmitter(40);
+			jet.setSize(8,8);
+			//jet.gravity = 300;
+			jet.setXSpeed(-30,30);
 			jet.setYSpeed(80, 120);
 			jet.setRotation(0, 0);	// VITAL!!!
-			jet.makeParticles(Jets, 80, 0, true, 0);
+            //use Jets class below to use some pixels!
+			jet.makeParticles(jetsPNG, 40, 0, false, 0);
+			//no delay ! not good as original!
 			//jet.delay = 0.01;
 			jet.start(false);
 			add(pixels);
